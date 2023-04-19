@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -iname "*.gif" | sed 's/\.[^.]*$//' | awk -F/ '{print $NF}' | tr '[:upper:]' '[:lower:]' | sort -f -n | uniq && echo
+find -type f -name "*.git" | rev | cut -d "/" -f 1 | cut -d '.' 2- | rev | LC_ALL=C sort -f
